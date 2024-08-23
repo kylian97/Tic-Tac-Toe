@@ -1,0 +1,66 @@
+/* styles.css */
+
+/* Style de base pour le corps de la page */
+body {
+  display: flex; /* Affiche le contenu en mode flexbox */
+  justify-content: center; /* Centre le contenu horizontalement */
+  align-items: center; /* Centre le contenu verticalement */
+  height: 100vh; /* Hauteur de la vue égale à la hauteur de la fenêtre */
+  background-color: #f4f4f4; /* Couleur de fond gris clair */
+  margin: 0; /* Supprime les marges par défaut */
+  font-family: Arial, sans-serif; /* Police de caractère utilisée pour le texte */
+}
+
+/* Style du conteneur principal du jeu */
+.game-container {
+  text-align: center; /* Centre le texte à l'intérieur */
+}
+
+/* Style pour la section de configuration des paramètres du jeu */
+.settings {
+  margin-bottom: 20px; /* Ajoute un espace en bas de la section */
+}
+
+/* Style pour le plateau de jeu */
+#board {
+  display: grid; /* Utilise le module CSS Grid pour l'affichage */
+  grid-template-columns: repeat(3, 100px); /* Définit une grille avec 3 colonnes de 100px chacune */
+  grid-gap: 10px; /* Espace entre chaque cellule du plateau */
+  margin-top: 20px; /* Ajoute un espace en haut du plateau */
+}
+
+/* Style pour chaque cellule du plateau */
+.cell {
+  width: 100px; /* Largeur de chaque cellule */
+  height: 100px; /* Hauteur de chaque cellule */
+  display: flex; /* Utilise le module Flexbox pour centrer le contenu */
+  justify-content: center; /* Centre le contenu horizontalement */
+  align-items: center; /* Centre le contenu verticalement */
+  background-color: #ffffff; /* Couleur de fond blanche pour chaque cellule */
+  border: 2px solid #000000; /* Bordure noire autour de chaque cellule */
+  font-size: 24px; /* Taille du texte dans chaque cellule */
+  cursor: pointer; /* Change le curseur en pointeur (main) lorsqu'on survole une cellule */
+}
+
+/* Style lors du survol d'une cellule */
+.cell:hover {
+  background-color: #e0e0e0; /* Change la couleur de fond en gris clair lorsqu'on survole une cellule */
+}
+
+/* Style pour les boutons de la page (Commencer le jeu et Recommencer) */
+button {
+  margin-top: 20px; /* Ajoute un espace en haut du bouton */
+  padding: 10px 20px; /* Espace intérieur des boutons (10px en haut et en bas, 20px à gauche et à droite) */
+  font-size: 16px; /* Taille du texte des boutons */
+}
+
+/* Style pour le texte de statut du jeu */
+#status {
+  margin-top: 20px; /* Ajoute un espace en haut du texte de statut */
+  font-size: 18px; /* Taille du texte pour le statut */
+}
+
+/* Classe CSS pour masquer les éléments */
+.hidden {
+  display: none; /* Cache les éléments en appliquant cette classe */
+}
