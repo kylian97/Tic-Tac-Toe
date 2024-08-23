@@ -1,75 +1,70 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <!-- Spécifie l'encodage des caractères pour la page -->
   <meta charset="UTF-8">
-  <!-- Définit le mode de compatibilité pour Internet Explorer -->
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <!-- Rend la page responsive pour s'adapter à tous les appareils -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Titre de la page affiché dans l'onglet du navigateur -->
   <title>Tic Tac Toe</title>
-  <!-- Lien vers le fichier CSS externe pour le style -->
   <link rel="stylesheet" href="tic-tac-toe-css.css">
 </head>
 <body>
-  <!-- Conteneur principal pour le jeu -->
+  <!-- Conteneur principal pour centrer tout le contenu -->
   <div class="game-container">
     <!-- Titre du jeu -->
     <h1>Tic Tac Toe</h1>
+
     <!-- Section pour les paramètres de configuration des joueurs -->
     <div class="settings">
       <!-- Formulaire pour le pseudo et le symbole du joueur 1 -->
-      <div>
+      <div class="player-settings">
         <label for="player1">Joueur 1 Pseudo:</label>
-        <!-- Champ de saisie pour le pseudo du joueur 1 -->
         <input type="text" id="player1" placeholder="Pseudo du joueur 1">
-        <!-- Label et menu déroulant pour choisir le symbole du joueur 1 -->
-        <label for="player1Symbol">Symbole:</label>
-        <select id="player1Symbol">
-          <!-- Option pour le symbole 'X' -->
-          <option value="X">X</option>
-          <!-- Option pour le symbole 'O' -->
-          <option value="O">O</option>
-        </select>
+        <div>
+          <label for="player1Symbol">Symbole:</label>
+          <select id="player1Symbol">
+            <option value="X">X</option>
+            <option value="O">O</option>
+          </select>
+        </div>
       </div>
       <!-- Formulaire pour le pseudo et le symbole du joueur 2 -->
-      <div>
+      <div class="player-settings">
         <label for="player2">Joueur 2 Pseudo:</label>
-        <!-- Champ de saisie pour le pseudo du joueur 2 -->
         <input type="text" id="player2" placeholder="Pseudo du joueur 2">
-        <!-- Label et menu déroulant pour choisir le symbole du joueur 2 -->
-        <label for="player2Symbol">Symbole:</label>
-        <select id="player2Symbol">
-          <!-- Option pour le symbole 'O' -->
-          <option value="O">O</option>
-          <!-- Option pour le symbole 'X' -->
-          <option value="X">X</option>
-        </select>
+        <div>
+          <label for="player2Symbol">Symbole:</label>
+          <select id="player2Symbol">
+            <option value="O">O</option>
+            <option value="X">X</option>
+          </select>
+        </div>
+      
       </div>
       <!-- Bouton pour commencer le jeu après avoir défini les paramètres -->
-      <button id="start-button">Commencer le jeu</button>
+      <button id="start-button" class="btn">Commencer le jeu</button>
     </div>
-    <!-- Plateau de jeu contenant 9 cellules, masqué par défaut -->
+
+    <!-- Plateau de jeu contenant 9 cellules -->
     <div id="board" class="hidden">
-      <!-- Chaque cellule est représentée par un div avec un attribut data-index pour identifier sa position -->
-      <div class="cell" data-index="0"></div>
-      <div class="cell" data-index="1"></div>
-      <div class="cell" data-index="2"></div>
-      <div class="cell" data-index="3"></div>
-      <div class="cell" data-index="4"></div>
-      <div class="cell" data-index="5"></div>
-      <div class="cell" data-index="6"></div>
-      <div class="cell" data-index="7"></div>
-      <div class="cell" data-index="8"></div>
+        <!-- Chaque cellule du plateau -->
+        <div class="cell" data-index="0"></div>
+        <div class="cell" data-index="1"></div>
+        <div class="cell" data-index="2"></div>
+        <div class="cell" data-index="3"></div>
+        <div class="cell" data-index="4"></div>
+        <div class="cell" data-index="5"></div>
+        <div class="cell" data-index="6"></div>
+        <div class="cell" data-index="7"></div>
+        <div class="cell" data-index="8"></div>
     </div>
-    <!-- Bouton pour réinitialiser le jeu, masqué par défaut -->
-    <button id="reset-button" class="hidden">Recommencer</button>
-    <!-- Paragraphe pour afficher le statut du jeu, tel que le tour du joueur actuel ou le gagnant -->
+
+    <!-- Bouton pour réinitialiser le jeu -->
+    <button id="reset-button" class="btn hidden">Recommencer</button>
+    
+    <!-- Paragraphe pour afficher le statut du jeu -->
     <p id="status"></p>
   </div>
 
-  <!-- Inclusion du fichier JavaScript externe pour gérer la logique du jeu -->
   <script src="tic-tac-toe-js.js"></script>
 </body>
 </html>

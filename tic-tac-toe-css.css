@@ -2,65 +2,124 @@
 
 /* Style de base pour le corps de la page */
 body {
-  display: flex; /* Affiche le contenu en mode flexbox */
-  justify-content: center; /* Centre le contenu horizontalement */
-  align-items: center; /* Centre le contenu verticalement */
-  height: 100vh; /* Hauteur de la vue égale à la hauteur de la fenêtre */
-  background-color: #f4f4f4; /* Couleur de fond gris clair */
-  margin: 0; /* Supprime les marges par défaut */
-  font-family: Arial, sans-serif; /* Police de caractère utilisée pour le texte */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f0f0; /* Couleur de fond douce */
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Police moderne */
+  padding: 20px; /* Padding pour un meilleur look sur mobile */
+  box-sizing: border-box; /* Inclut le padding et la bordure dans la largeur totale */
 }
 
-/* Style du conteneur principal du jeu */
+/* Conteneur principal pour centrer tout le contenu */
 .game-container {
-  text-align: center; /* Centre le texte à l'intérieur */
+  text-align: center;
+  background-color: #ffffff; /* Fond blanc */
+  padding: 20px;
+  border-radius: 10px; /* Bords arrondis */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre douce */
+  max-width: 400px; /* Largeur maximale */
+  width: 100%; /* S'adapte à la largeur du conteneur */
+  box-sizing: border-box; /* Inclut le padding et la bordure dans la largeur totale */
 }
 
 /* Style pour la section de configuration des paramètres du jeu */
 .settings {
-  margin-bottom: 20px; /* Ajoute un espace en bas de la section */
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column; /* Aligne verticalement */
+  gap: 15px; /* Espace entre les éléments */
 }
 
-/* Style pour le plateau de jeu */
+/* Style des champs de configuration des joueurs */
+.player-settings {
+  display: flex;
+  flex-direction: column; /* Aligne verticalement */
+  align-items: center; /* Centre les éléments horizontalement */
+}
+
+/* Styles pour les boutons */
+.btn {
+  background-color: #007bff; /* Couleur de fond bleue */
+  color: white; /* Couleur du texte */
+  border: none; /* Supprime les bordures */
+  padding: 10px 20px; /* Padding pour les boutons */
+  font-size: 16px; /* Taille du texte */
+  border-radius: 5px; /* Bords arrondis */
+  cursor: pointer; /* Curseur pointer */
+  transition: background-color 0.3s ease; /* Transition douce */
+  margin-top: 20px; /* Espace au-dessus des boutons */
+}
+
+/* Style de survol pour les boutons */
+.btn:hover {
+  background-color: #0056b3; /* Couleur plus foncée au survol */
+}
+
+/* Plateau de jeu */
 #board {
-  display: grid; /* Utilise le module CSS Grid pour l'affichage */
-  grid-template-columns: repeat(3, 100px); /* Définit une grille avec 3 colonnes de 100px chacune */
-  grid-gap: 10px; /* Espace entre chaque cellule du plateau */
-  margin-top: 20px; /* Ajoute un espace en haut du plateau */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Grille de 3 colonnes */
+  gap: 10px; /* Espace entre les cellules */
+  margin-top: 20px; /* Espace en haut du plateau */
+  max-width: 300px; /* Limite la largeur maximale du plateau */
+  width: 100%; /* S'adapte à la largeur du conteneur */
+  margin: 20px auto; /* Centre le plateau horizontalement */
+  box-sizing: border-box; /* Inclut le padding et la bordure dans la largeur totale */
 }
 
 /* Style pour chaque cellule du plateau */
 .cell {
-  width: 100px; /* Largeur de chaque cellule */
-  height: 100px; /* Hauteur de chaque cellule */
-  display: flex; /* Utilise le module Flexbox pour centrer le contenu */
-  justify-content: center; /* Centre le contenu horizontalement */
-  align-items: center; /* Centre le contenu verticalement */
-  background-color: #ffffff; /* Couleur de fond blanche pour chaque cellule */
-  border: 2px solid #000000; /* Bordure noire autour de chaque cellule */
-  font-size: 24px; /* Taille du texte dans chaque cellule */
-  cursor: pointer; /* Change le curseur en pointeur (main) lorsqu'on survole une cellule */
+  width: 100%; /* Largeur pour remplir la colonne */
+  aspect-ratio: 1; /* Ratio 1:1 pour les cellules carrées */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f9f9f9; /* Couleur de fond claire */
+  border: 2px solid #007bff; /* Bordure bleue */
+  font-size: 24px; /* Taille du texte */
+  cursor: pointer; /* Curseur pointer */
+  border-radius: 5px; /* Bords arrondis */
+  transition: background-color 0.3s ease; /* Transition douce */
+  box-sizing: border-box; /* Inclut le padding et la bordure dans la largeur totale */
 }
 
 /* Style lors du survol d'une cellule */
 .cell:hover {
-  background-color: #e0e0e0; /* Change la couleur de fond en gris clair lorsqu'on survole une cellule */
-}
-
-/* Style pour les boutons de la page (Commencer le jeu et Recommencer) */
-button {
-  margin-top: 20px; /* Ajoute un espace en haut du bouton */
-  padding: 10px 20px; /* Espace intérieur des boutons (10px en haut et en bas, 20px à gauche et à droite) */
-  font-size: 16px; /* Taille du texte des boutons */
+  background-color: #e0e0e0; /* Couleur de fond au survol */
 }
 
 /* Style pour le texte de statut du jeu */
 #status {
-  margin-top: 20px; /* Ajoute un espace en haut du texte de statut */
-  font-size: 18px; /* Taille du texte pour le statut */
+  margin-top: 20px;
+  font-size: 18px; /* Taille du texte */
+  color: #333; /* Couleur du texte */
+  margin-bottom: 10px; /* Espace en bas pour éviter le chevauchement */
 }
 
 /* Classe CSS pour masquer les éléments */
 .hidden {
-  display: none; /* Cache les éléments en appliquant cette classe */
+  display: none; /* Cache les éléments */
+}
+
+/* Media query pour les écrans plus petits */
+@media (max-width: 600px) {
+  .game-container {
+    padding: 10px; /* Padding ajusté */
+  }
+
+  .btn {
+    font-size: 14px; /* Taille de texte plus petite */
+    padding: 8px 16px; /* Ajuste le padding */
+  }
+
+  #board {
+    gap: 5px; /* Réduit l'espace entre les cellules */
+  }
+
+  .cell {
+    font-size: 20px; /* Taille de texte réduite pour les petits écrans */
+  }
 }
